@@ -1,3 +1,4 @@
+import MarkdownPreview from '@uiw/react-markdown-preview';
 import styles from "./ReviewSection.module.css";
 
 interface ReviewSectionProps {
@@ -8,7 +9,14 @@ export default function ReviewSection({ review }: ReviewSectionProps) {
     return(
         <div className={styles.container}>
             <div className={styles.reviewSection}>
-                {review}
+                <MarkdownPreview
+                    className={styles.markdownPreview}
+                    source={"Hello, this is a review section. You can write your review here." + review}
+                    style={{ 
+                        whiteSpace: 'pre-wrap',
+                        padding: '20px',
+                     }}
+                />
             </div>
         </div>
     )

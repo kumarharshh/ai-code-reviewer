@@ -1,15 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import styles from "@/components/Text-Editor/TextEditor.module.css";
 import CodeMirror from "@uiw/react-codemirror";
 import {javascript} from "@codemirror/lang-javascript";
-import ReviewSection from "../Review-Section/ReviewSection";
 
+interface TextEditorProps {
+  value: string;
+  setValue: (value: string) => void;
+}
 
-export default function TextEditor() {
+export default function TextEditor({value, setValue}: TextEditorProps) {
 
-  const [value, setValue] = useState("");
   
   function handleReview (text:string) {
     console.log(text);
@@ -29,7 +30,6 @@ export default function TextEditor() {
         onChange={(value) => setValue(value)}
         extensions={[javascript({ jsx: true })]}
       />
-      <ReviewSection review={value} />
     </div>
   );
 }

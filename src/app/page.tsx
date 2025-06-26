@@ -1,10 +1,10 @@
 import styles from "./page.module.css";
-import TextEditor from "@/components/Text-Editor/TextEditor";
+import WorkSpace from "@/components/Work-Space/WorkSpace";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <TextEditor />
+      <WorkSpace />
     </div>
   );
 }
