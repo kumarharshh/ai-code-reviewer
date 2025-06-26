@@ -11,7 +11,7 @@ export default function ReviewSection({ review }: ReviewSectionProps) {
             <div className={styles.reviewSection}>
                 <MarkdownPreview
                     className={styles.markdownPreview}
-                    source={"Hello, this is a review section. You can write your review here." + review}
+                    source={review}
                     style={{ 
                         whiteSpace: 'pre-wrap',
                         padding: '20px',

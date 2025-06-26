@@ -1,20 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import styles from "@/components/Text-Editor/TextEditor.module.css";
 import CodeMirror from "@uiw/react-codemirror";
 import {javascript} from "@codemirror/lang-javascript";
 
 interface TextEditorProps {
-  value: string;
-  setValue: (value: string) => void;
+  setReviewText: (value: string) => void;
 }
 
-export default function TextEditor({value, setValue}: TextEditorProps) {
+export default function TextEditor({setReviewText}: TextEditorProps) {
 
-  
+  const [value, setValue] = useState<string>("");
+
   function handleReview (text:string) {
     console.log(text);
-    // main api calling to the api and the response setting will be done here 
+    setReviewText("harsh");
   }
 
 
